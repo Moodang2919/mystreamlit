@@ -11,7 +11,7 @@ import pickle
 
 #load modal
 with open('dtm_trained_model.pkl','rb') as f:
-    dtm_modal = pickle.load(f)
+    dtm_model = pickle.load(f)
     
 st.title("Iris flower Classification")
 st.write("Enter the feature of the iris flower:")
@@ -23,6 +23,6 @@ petal_width = st.slider("Petal Width (cm)",0.1,2.5,0.2)
 
 if st.button("Predict"):
     input_data = np.array([[sepal_length,sepal_width,petal_length,petal_width]])
-    prediction = dtm_modal.predict(input_data)
+    prediction = dtm_model.predict(input_data)
     speicies = ['Setosa','Versicolor','Virginica']
     st.success(f"The Predicted Species is:**{speicies[prediction[0]]}**")
