@@ -1,4 +1,0 @@
-steamlit
-scikit-learn
-numpy
-pandas
